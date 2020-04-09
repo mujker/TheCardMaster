@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
@@ -90,9 +91,8 @@ namespace TheCardMaster
             while (cardTaskFlag)
             {
                 //黄牌
-                if (MyGetKeyState(config.KeyYellow) && !MyGetKeyState(17))
+                if (KeyPressState(config.KeyYellow) && !KeyPressState(17))
                 {
-
                     if (config.KeyYellow != 87)
                     {
                         W_Press();
@@ -103,7 +103,7 @@ namespace TheCardMaster
                 }
 
                 //蓝牌
-                if (MyGetKeyState(config.KeyBlue) && !MyGetKeyState(17))
+                if (KeyPressState(config.KeyBlue) && !KeyPressState(17))
                 {
                     W_Press();
                     LookUpCardColor(config.ArgbBlueCard);
@@ -111,7 +111,7 @@ namespace TheCardMaster
                 }
 
                 //红牌
-                if (MyGetKeyState(config.KeyRed) && !MyGetKeyState(17))
+                if (KeyPressState(config.KeyRed) && !KeyPressState(17))
                 {
                     W_Press();
                     LookUpCardColor(config.ArgbRedCard);
@@ -119,27 +119,27 @@ namespace TheCardMaster
                 }
 
                 //大招自动黄牌
-//                if (MyGetKeyState(82) && !MyGetKeyState(17))
-//                {
-//                    W_Press();
-//                    LookUpCardColor(config.ArgbYellowCard);
-//                    continue;
-//                }
+                if (KeyPressState(82) && !KeyPressState(17))
+                {
+                    W_Press();
+                    LookUpCardColor(config.ArgbYellowCard);
+                    continue;
+                }
 
                 //启动
-                if (MyGetKeyState(120) && !MyGetKeyState(17))
+                if (KeyPressState(120) && !KeyPressState(17))
                 {
                     Start();
                 }
 
                 //停止
-                if (MyGetKeyState(121) && !MyGetKeyState(17))
+                if (KeyPressState(121) && !KeyPressState(17))
                 {
                     Stop();
                 }
 
                 //黄牌ARGB
-                if (MyGetKeyState(49) && MyGetKeyState(18))
+                if (KeyPressState(49) && KeyPressState(18))
                 {
                     var tempColor = ColorRec.GetPixelColor(config.CardPositionX, config.CardPositionY);
                     INIComm.IniWrite("CardColorArgb", "Yellow", tempColor.ToArgb().ToString(), DefaultIniPath);
@@ -147,7 +147,7 @@ namespace TheCardMaster
                 }
 
                 //蓝牌ARGB
-                if (MyGetKeyState(50) && MyGetKeyState(18))
+                if (KeyPressState(50) && KeyPressState(18))
                 {
                     var tempColor = ColorRec.GetPixelColor(config.CardPositionX, config.CardPositionY);
                     INIComm.IniWrite("CardColorArgb", "Blue", tempColor.ToArgb().ToString(), DefaultIniPath);
@@ -155,7 +155,7 @@ namespace TheCardMaster
                 }
 
                 //红牌ARGB
-                if (MyGetKeyState(51) && MyGetKeyState(18))
+                if (KeyPressState(51) && KeyPressState(18))
                 {
                     var tempColor = ColorRec.GetPixelColor(config.CardPositionX, config.CardPositionY);
                     INIComm.IniWrite("CardColorArgb", "Red", tempColor.ToArgb().ToString(), DefaultIniPath);
@@ -163,7 +163,7 @@ namespace TheCardMaster
                 }
 
                 //W键位坐标
-                if (MyGetKeyState(36))
+                if (KeyPressState(36))
                 {
                     INIComm.IniWrite("CardPosition", "X", MousePosition.X.ToString(), DefaultIniPath);
                     INIComm.IniWrite("CardPosition", "Y", MousePosition.Y.ToString(), DefaultIniPath);
@@ -215,6 +215,7 @@ namespace TheCardMaster
             config.CardPositionY = Convert.ToInt32(INIComm.IniReadValue("CardPosition", "Y", DefaultIniPath));
 
             config.KeyBlank = Convert.ToInt32(INIComm.IniReadValue("Frequency", "KeyBlank", DefaultIniPath));
+            config.TimeOut = Convert.ToInt32(INIComm.IniReadValue("Frequency", "TimeOut", DefaultIniPath));
 
             gb_Settings.BeginInvoke((Action) delegate
             {
@@ -227,6 +228,7 @@ namespace TheCardMaster
                 tb_CardPosX.Text = config.CardPositionX.ToString();
                 tb_CardPosY.Text = config.CardPositionY.ToString();
                 tb_KeyDownDelay.Text = config.KeyBlank.ToString();
+                tb_getCardTimeOut.Text = config.TimeOut.ToString();
             });
         }
 
@@ -241,6 +243,7 @@ namespace TheCardMaster
         /// <returns></returns>
         private bool LookUpCardColor(int targetCardArgb)
         {
+            Stopwatch sw = Stopwatch.StartNew();
             int count = 0;
             while (cardTaskFlag)
             {
@@ -248,15 +251,20 @@ namespace TheCardMaster
 
                 if (changeColor.ToArgb().Equals(targetCardArgb))
                 {
+                    sw.Stop();
+                    Console.WriteLine(sw.ElapsedMilliseconds);
                     W_Press();
                     return true;
                 }
 
                 Thread.Sleep(1);
-                if (count > 5000)
+                if (sw.ElapsedMilliseconds > config.TimeOut)
                 {
+                    sw.Stop();
+                    Console.WriteLine(sw.ElapsedMilliseconds);
                     break;
                 }
+
                 count++;
             }
 
@@ -289,11 +297,7 @@ namespace TheCardMaster
             btn_Start.Text = startTxt;
         }
 
-        private void KeyTimerOnElapsed(object sender, ElapsedEventArgs e)
-        {
-        }
-
-        private bool MyGetKeyState(int keys)
+        private bool KeyPressState(int keys)
         {
             return (GetKeyState(keys) & 32768) != 0;
         }
@@ -365,16 +369,16 @@ namespace TheCardMaster
 
         private void Tb_KeyDownDelay_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar!='\b')//这是允许输入退格键  
-            {  
-                if((e.KeyChar<'0')||(e.KeyChar>'9'))//这是允许输入0-9数字  
-                {  
-                    e.Handled = true;  
-                }  
-            }  
+            if (e.KeyChar != '\b') //这是允许输入退格键  
+            {
+                if ((e.KeyChar < '0') || (e.KeyChar > '9')) //这是允许输入0-9数字  
+                {
+                    e.Handled = true;
+                }
+            }
         }
 
-        private void Tb_KeyDownDelay_TextChanged(object sender, EventArgs e)
+        private void tb_KeyDownDelay_Leave(object sender, EventArgs e)
         {
             var tempBlank = Convert.ToInt32(tb_KeyDownDelay.Text);
             if (tempBlank <= 0)
@@ -386,9 +390,26 @@ namespace TheCardMaster
             {
                 tempBlank = 150;
             }
+
             INIComm.IniWrite("Frequency", "KeyBlank", tempBlank.ToString(), DefaultIniPath);
             LoadConfig();
+        }
 
+        private void tb_getCardTimeOut_Leave(object sender, EventArgs e)
+        {
+            var CardTimeOut = Convert.ToInt32(tb_getCardTimeOut.Text);
+            if (CardTimeOut <= 1000)
+            {
+                CardTimeOut = 1000;
+            }
+
+            if (CardTimeOut >= 5000)
+            {
+                CardTimeOut = 5000;
+            }
+
+            INIComm.IniWrite("Frequency", "TimeOut", CardTimeOut.ToString(), DefaultIniPath);
+            LoadConfig();
         }
     }
 }

@@ -17,5 +17,6 @@ namespace TheCardMaster
         public int CardPositionY { get; set; }
 
         public int KeyBlank { get; set; }
+        public int TimeOut { get; set; }
     }
 }
