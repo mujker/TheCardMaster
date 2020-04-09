@@ -18,5 +18,7 @@ namespace TheCardMaster
 
         public int KeyBlank { get; set; }
         public int TimeOut { get; set; }
+
+        public bool RAutoYellowCard { get; set; }
     }
 }

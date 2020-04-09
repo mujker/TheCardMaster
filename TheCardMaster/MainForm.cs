@@ -115,7 +115,7 @@ namespace TheCardMaster
                 }
 
                 //大招自动黄牌
-                if (KeyPressState(82) && !KeyPressState(17))
+                if (KeyPressState(82) && !KeyPressState(17) && config.RAutoYellowCard)
                 {
                     W_Press();
                     LookUpCardColor(config.ArgbYellowCard);
@@ -126,32 +126,28 @@ namespace TheCardMaster
                 if (KeyPressState(49) && KeyPressState(18))
                 {
                     var tempColor = ColorRec.GetPixelColor(config.CardPositionX, config.CardPositionY);
-                    INIComm.IniWrite("CardColorArgb", "Yellow", tempColor.ToArgb().ToString(), DefaultIniPath);
-                    LoadConfig();
+                    WriteIni("CardColorArgb", "Yellow", tempColor.ToArgb().ToString());
                 }
 
                 //蓝牌ARGB
                 if (KeyPressState(50) && KeyPressState(18))
                 {
                     var tempColor = ColorRec.GetPixelColor(config.CardPositionX, config.CardPositionY);
-                    INIComm.IniWrite("CardColorArgb", "Blue", tempColor.ToArgb().ToString(), DefaultIniPath);
-                    LoadConfig();
+                    WriteIni("CardColorArgb", "Blue", tempColor.ToArgb().ToString());
                 }
 
                 //红牌ARGB
                 if (KeyPressState(51) && KeyPressState(18))
                 {
                     var tempColor = ColorRec.GetPixelColor(config.CardPositionX, config.CardPositionY);
-                    INIComm.IniWrite("CardColorArgb", "Red", tempColor.ToArgb().ToString(), DefaultIniPath);
-                    LoadConfig();
+                    WriteIni("CardColorArgb", "Red", tempColor.ToArgb().ToString());
                 }
 
                 //W键位坐标
                 if (KeyPressState(36))
                 {
-                    INIComm.IniWrite("CardPosition", "X", MousePosition.X.ToString(), DefaultIniPath);
-                    INIComm.IniWrite("CardPosition", "Y", MousePosition.Y.ToString(), DefaultIniPath);
-                    LoadConfig();
+                    WriteIni("CardPosition", "X", MousePosition.X.ToString());
+                    WriteIni("CardPosition", "Y", MousePosition.Y.ToString());
                 }
 
                 Thread.Sleep(1);
@@ -191,6 +187,7 @@ namespace TheCardMaster
             {
                 return;
             }
+
             config.ArgbYellowCard = Convert.ToInt32(INIComm.IniReadValue("CardColorArgb", "Yellow", DefaultIniPath));
             config.ArgbBlueCard = Convert.ToInt32(INIComm.IniReadValue("CardColorArgb", "Blue", DefaultIniPath));
             config.ArgbRedCard = Convert.ToInt32(INIComm.IniReadValue("CardColorArgb", "Red", DefaultIniPath));
@@ -205,6 +202,9 @@ namespace TheCardMaster
             config.KeyBlank = Convert.ToInt32(INIComm.IniReadValue("Frequency", "KeyBlank", DefaultIniPath));
             config.TimeOut = Convert.ToInt32(INIComm.IniReadValue("Frequency", "TimeOut", DefaultIniPath));
 
+            config.RAutoYellowCard =
+                Convert.ToBoolean(INIComm.IniReadValue("Function", "RAutoYellowCard", DefaultIniPath));
+
             gb_Settings.BeginInvoke((Action) delegate
             {
                 tb_Yellow.Text = ((Keys) config.KeyYellow).ToString();
@@ -217,6 +217,7 @@ namespace TheCardMaster
                 tb_CardPosY.Text = config.CardPositionY.ToString();
                 tb_KeyDownDelay.Text = config.KeyBlank.ToString();
                 tb_getCardTimeOut.Text = config.TimeOut.ToString();
+                cb_rAutoYellow.Checked = config.RAutoYellowCard;
             });
         }
 
@@ -318,17 +319,17 @@ namespace TheCardMaster
             box.Text = e.KeyData.ToString();
             if (box.Name.Contains("Yellow"))
             {
-                INIComm.IniWrite("CardKey", "Yellow", e.KeyValue.ToString(), DefaultIniPath);
+                WriteIni("CardKey", "Yellow", e.KeyValue.ToString());
             }
 
             if (box.Name.Contains("Blue"))
             {
-                INIComm.IniWrite("CardKey", "Blue", e.KeyValue.ToString(), DefaultIniPath);
+                WriteIni("CardKey", "Blue", e.KeyValue.ToString());
             }
 
             if (box.Name.Contains("Red"))
             {
-                INIComm.IniWrite("CardKey", "Red", e.KeyValue.ToString(), DefaultIniPath);
+                WriteIni("CardKey", "Red", e.KeyValue.ToString());
             }
         }
 
@@ -385,8 +386,7 @@ namespace TheCardMaster
                 tempBlank = 150;
             }
 
-            INIComm.IniWrite("Frequency", "KeyBlank", tempBlank.ToString(), DefaultIniPath);
-            LoadConfig();
+            WriteIni("Frequency", "KeyBlank", tempBlank.ToString());
         }
 
         private void tb_getCardTimeOut_Leave(object sender, EventArgs e)
@@ -402,7 +402,17 @@ namespace TheCardMaster
                 CardTimeOut = 5000;
             }
 
-            INIComm.IniWrite("Frequency", "TimeOut", CardTimeOut.ToString(), DefaultIniPath);
+            WriteIni("Frequency", "TimeOut", CardTimeOut.ToString());
+        }
+
+        private void cb_rAutoYellow_Click(object sender, EventArgs e)
+        {
+            WriteIni("Function", "RAutoYellowCard", cb_rAutoYellow.Checked.ToString());
+        }
+
+        private void WriteIni(string section, string key, string value)
+        {
+            INIComm.IniWrite(section, key, value, DefaultIniPath);
             LoadConfig();
         }
     }

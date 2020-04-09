@@ -51,6 +51,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Start = new System.Windows.Forms.Button();
             this.btn_LoadConfig = new System.Windows.Forms.Button();
+            this.cb_rAutoYellow = new System.Windows.Forms.CheckBox();
             this.gb_Settings.SuspendLayout();
             this.gb_Buttons.SuspendLayout();
             this.SuspendLayout();
@@ -175,6 +176,7 @@
             // 
             // gb_Buttons
             // 
+            this.gb_Buttons.Controls.Add(this.cb_rAutoYellow);
             this.gb_Buttons.Controls.Add(this.label1);
             this.gb_Buttons.Controls.Add(this.btn_Start);
             this.gb_Buttons.Controls.Add(this.btn_LoadConfig);
@@ -200,6 +202,13 @@
             this.btn_LoadConfig.Name = "btn_LoadConfig";
             this.btn_LoadConfig.UseVisualStyleBackColor = true;
             this.btn_LoadConfig.Click += new System.EventHandler(this.btn_LoadConfig_Click);
+            // 
+            // cb_rAutoYellow
+            // 
+            resources.ApplyResources(this.cb_rAutoYellow, "cb_rAutoYellow");
+            this.cb_rAutoYellow.Name = "cb_rAutoYellow";
+            this.cb_rAutoYellow.UseVisualStyleBackColor = true;
+            this.cb_rAutoYellow.Click += new System.EventHandler(this.cb_rAutoYellow_Click);
             // 
             // MainForm
             // 
@@ -244,5 +253,6 @@
         private System.Windows.Forms.Label lb_Color_R;
         private System.Windows.Forms.Label lb_Color_B;
         private System.Windows.Forms.Label lb_Color_Y;
+        private System.Windows.Forms.CheckBox cb_rAutoYellow;
     }
 }
