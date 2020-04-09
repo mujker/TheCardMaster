@@ -6,11 +6,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Timers;
 using System.Windows.Forms;
-using ImageRecognitionLib;
-using WinINI;
-using WinIOLib;
 
 namespace TheCardMaster
 {
@@ -191,6 +187,10 @@ namespace TheCardMaster
         /// </summary>
         private void LoadConfig()
         {
+            if (!File.Exists(DefaultIniPath))
+            {
+                return;
+            }
             config.ArgbYellowCard = Convert.ToInt32(INIComm.IniReadValue("CardColorArgb", "Yellow", DefaultIniPath));
             config.ArgbBlueCard = Convert.ToInt32(INIComm.IniReadValue("CardColorArgb", "Blue", DefaultIniPath));
             config.ArgbRedCard = Convert.ToInt32(INIComm.IniReadValue("CardColorArgb", "Red", DefaultIniPath));

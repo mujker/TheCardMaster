@@ -1,7 +1,7 @@
 ﻿using System.Runtime.InteropServices;
 using System.Text;
 
-namespace WinINI
+namespace TheCardMaster
 {
     public class INIComm
     {

@@ -41,16 +41,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lb_CardPosY = new System.Windows.Forms.Label();
             this.lb_CardPosX = new System.Windows.Forms.Label();
+            this.lb_Color_R = new System.Windows.Forms.Label();
             this.lb_Red = new System.Windows.Forms.Label();
+            this.lb_Color_B = new System.Windows.Forms.Label();
             this.lb_Blue = new System.Windows.Forms.Label();
+            this.lb_Color_Y = new System.Windows.Forms.Label();
             this.lb_Yellow = new System.Windows.Forms.Label();
             this.gb_Buttons = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Start = new System.Windows.Forms.Button();
             this.btn_LoadConfig = new System.Windows.Forms.Button();
-            this.lb_Color_Y = new System.Windows.Forms.Label();
-            this.lb_Color_B = new System.Windows.Forms.Label();
-            this.lb_Color_R = new System.Windows.Forms.Label();
             this.gb_Settings.SuspendLayout();
             this.gb_Buttons.SuspendLayout();
             this.SuspendLayout();
@@ -143,15 +143,30 @@
             resources.ApplyResources(this.lb_CardPosX, "lb_CardPosX");
             this.lb_CardPosX.Name = "lb_CardPosX";
             // 
+            // lb_Color_R
+            // 
+            resources.ApplyResources(this.lb_Color_R, "lb_Color_R");
+            this.lb_Color_R.Name = "lb_Color_R";
+            // 
             // lb_Red
             // 
             resources.ApplyResources(this.lb_Red, "lb_Red");
             this.lb_Red.Name = "lb_Red";
             // 
+            // lb_Color_B
+            // 
+            resources.ApplyResources(this.lb_Color_B, "lb_Color_B");
+            this.lb_Color_B.Name = "lb_Color_B";
+            // 
             // lb_Blue
             // 
             resources.ApplyResources(this.lb_Blue, "lb_Blue");
             this.lb_Blue.Name = "lb_Blue";
+            // 
+            // lb_Color_Y
+            // 
+            resources.ApplyResources(this.lb_Color_Y, "lb_Color_Y");
+            this.lb_Color_Y.Name = "lb_Color_Y";
             // 
             // lb_Yellow
             // 
@@ -185,21 +200,6 @@
             this.btn_LoadConfig.Name = "btn_LoadConfig";
             this.btn_LoadConfig.UseVisualStyleBackColor = true;
             this.btn_LoadConfig.Click += new System.EventHandler(this.btn_LoadConfig_Click);
-            // 
-            // lb_Color_Y
-            // 
-            resources.ApplyResources(this.lb_Color_Y, "lb_Color_Y");
-            this.lb_Color_Y.Name = "lb_Color_Y";
-            // 
-            // lb_Color_B
-            // 
-            resources.ApplyResources(this.lb_Color_B, "lb_Color_B");
-            this.lb_Color_B.Name = "lb_Color_B";
-            // 
-            // lb_Color_R
-            // 
-            resources.ApplyResources(this.lb_Color_R, "lb_Color_R");
-            this.lb_Color_R.Name = "lb_Color_R";
             // 
             // MainForm
             // 
