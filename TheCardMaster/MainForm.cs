@@ -126,18 +126,6 @@ namespace TheCardMaster
                     continue;
                 }
 
-                //启动
-                if (KeyPressState(120) && !KeyPressState(17))
-                {
-                    Start();
-                }
-
-                //停止
-                if (KeyPressState(121) && !KeyPressState(17))
-                {
-                    Stop();
-                }
-
                 //黄牌ARGB
                 if (KeyPressState(49) && KeyPressState(18))
                 {
