@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="tb_getCardTimeOut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 239</value>
+    <value>151, 239</value>
   </data>
   <data name="tb_getCardTimeOut.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 21</value>
@@ -141,7 +141,7 @@
     <value>0</value>
   </data>
   <data name="tb_KeyDownDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 202</value>
+    <value>151, 202</value>
   </data>
   <data name="tb_KeyDownDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 21</value>
@@ -162,10 +162,10 @@
     <value>1</value>
   </data>
   <data name="tb_CardPosY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 165</value>
+    <value>151, 165</value>
   </data>
   <data name="tb_CardPosY.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 21</value>
+    <value>85, 21</value>
   </data>
   <data name="tb_CardPosY.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -183,10 +183,10 @@
     <value>2</value>
   </data>
   <data name="tb_CardPosX.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 128</value>
+    <value>151, 128</value>
   </data>
   <data name="tb_CardPosX.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 21</value>
+    <value>85, 21</value>
   </data>
   <data name="tb_CardPosX.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -208,10 +208,10 @@
     <value>NoControl</value>
   </data>
   <data name="tb_Red.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 88</value>
+    <value>151, 88</value>
   </data>
   <data name="tb_Red.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 21</value>
+    <value>85, 21</value>
   </data>
   <data name="tb_Red.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -232,10 +232,10 @@
     <value>NoControl</value>
   </data>
   <data name="tb_Blue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 57</value>
+    <value>151, 57</value>
   </data>
   <data name="tb_Blue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 21</value>
+    <value>85, 21</value>
   </data>
   <data name="tb_Blue.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -256,10 +256,10 @@
     <value>NoControl</value>
   </data>
   <data name="tb_Yellow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 26</value>
+    <value>151, 26</value>
   </data>
   <data name="tb_Yellow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 21</value>
+    <value>85, 21</value>
   </data>
   <data name="tb_Yellow.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -280,7 +280,7 @@
     <value>True</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 243</value>
+    <value>26, 243</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 12</value>
@@ -307,7 +307,7 @@
     <value>True</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 206</value>
+    <value>39, 206</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 12</value>
@@ -334,7 +334,7 @@
     <value>True</value>
   </data>
   <data name="lb_CardPosY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 169</value>
+    <value>40, 169</value>
   </data>
   <data name="lb_CardPosY.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 12</value>
@@ -361,7 +361,7 @@
     <value>True</value>
   </data>
   <data name="lb_CardPosX.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 132</value>
+    <value>40, 132</value>
   </data>
   <data name="lb_CardPosX.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 12</value>
@@ -384,11 +384,41 @@
   <data name="&gt;&gt;lb_CardPosX.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <data name="lb_Color_R.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lb_Color_R.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lb_Color_R.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 92</value>
+  </data>
+  <data name="lb_Color_R.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 12</value>
+  </data>
+  <data name="lb_Color_R.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lb_Color_R.Text" xml:space="preserve">
+    <value>    </value>
+  </data>
+  <data name="&gt;&gt;lb_Color_R.Name" xml:space="preserve">
+    <value>lb_Color_R</value>
+  </data>
+  <data name="&gt;&gt;lb_Color_R.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lb_Color_R.Parent" xml:space="preserve">
+    <value>gb_Settings</value>
+  </data>
+  <data name="&gt;&gt;lb_Color_R.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
   <data name="lb_Red.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lb_Red.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 92</value>
+    <value>52, 92</value>
   </data>
   <data name="lb_Red.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 12</value>
@@ -409,13 +439,43 @@
     <value>gb_Settings</value>
   </data>
   <data name="&gt;&gt;lb_Red.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
+  </data>
+  <data name="lb_Color_B.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lb_Color_B.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lb_Color_B.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 61</value>
+  </data>
+  <data name="lb_Color_B.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 12</value>
+  </data>
+  <data name="lb_Color_B.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lb_Color_B.Text" xml:space="preserve">
+    <value>    </value>
+  </data>
+  <data name="&gt;&gt;lb_Color_B.Name" xml:space="preserve">
+    <value>lb_Color_B</value>
+  </data>
+  <data name="&gt;&gt;lb_Color_B.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lb_Color_B.Parent" xml:space="preserve">
+    <value>gb_Settings</value>
+  </data>
+  <data name="&gt;&gt;lb_Color_B.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
   <data name="lb_Blue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lb_Blue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 61</value>
+    <value>52, 61</value>
   </data>
   <data name="lb_Blue.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 12</value>
@@ -436,13 +496,43 @@
     <value>gb_Settings</value>
   </data>
   <data name="&gt;&gt;lb_Blue.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
+  </data>
+  <data name="lb_Color_Y.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lb_Color_Y.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lb_Color_Y.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 30</value>
+  </data>
+  <data name="lb_Color_Y.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 12</value>
+  </data>
+  <data name="lb_Color_Y.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lb_Color_Y.Text" xml:space="preserve">
+    <value>    </value>
+  </data>
+  <data name="&gt;&gt;lb_Color_Y.Name" xml:space="preserve">
+    <value>lb_Color_Y</value>
+  </data>
+  <data name="&gt;&gt;lb_Color_Y.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lb_Color_Y.Parent" xml:space="preserve">
+    <value>gb_Settings</value>
+  </data>
+  <data name="&gt;&gt;lb_Color_Y.ZOrder" xml:space="preserve">
+    <value>15</value>
   </data>
   <data name="lb_Yellow.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lb_Yellow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 30</value>
+    <value>52, 30</value>
   </data>
   <data name="lb_Yellow.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 12</value>
@@ -463,7 +553,7 @@
     <value>gb_Settings</value>
   </data>
   <data name="&gt;&gt;lb_Yellow.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>16</value>
   </data>
   <data name="gb_Settings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

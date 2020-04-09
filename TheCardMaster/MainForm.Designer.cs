@@ -48,6 +48,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Start = new System.Windows.Forms.Button();
             this.btn_LoadConfig = new System.Windows.Forms.Button();
+            this.lb_Color_Y = new System.Windows.Forms.Label();
+            this.lb_Color_B = new System.Windows.Forms.Label();
+            this.lb_Color_R = new System.Windows.Forms.Label();
             this.gb_Settings.SuspendLayout();
             this.gb_Buttons.SuspendLayout();
             this.SuspendLayout();
@@ -65,8 +68,11 @@
             this.gb_Settings.Controls.Add(this.label2);
             this.gb_Settings.Controls.Add(this.lb_CardPosY);
             this.gb_Settings.Controls.Add(this.lb_CardPosX);
+            this.gb_Settings.Controls.Add(this.lb_Color_R);
             this.gb_Settings.Controls.Add(this.lb_Red);
+            this.gb_Settings.Controls.Add(this.lb_Color_B);
             this.gb_Settings.Controls.Add(this.lb_Blue);
+            this.gb_Settings.Controls.Add(this.lb_Color_Y);
             this.gb_Settings.Controls.Add(this.lb_Yellow);
             resources.ApplyResources(this.gb_Settings, "gb_Settings");
             this.gb_Settings.Name = "gb_Settings";
@@ -180,6 +186,21 @@
             this.btn_LoadConfig.UseVisualStyleBackColor = true;
             this.btn_LoadConfig.Click += new System.EventHandler(this.btn_LoadConfig_Click);
             // 
+            // lb_Color_Y
+            // 
+            resources.ApplyResources(this.lb_Color_Y, "lb_Color_Y");
+            this.lb_Color_Y.Name = "lb_Color_Y";
+            // 
+            // lb_Color_B
+            // 
+            resources.ApplyResources(this.lb_Color_B, "lb_Color_B");
+            this.lb_Color_B.Name = "lb_Color_B";
+            // 
+            // lb_Color_R
+            // 
+            resources.ApplyResources(this.lb_Color_R, "lb_Color_R");
+            this.lb_Color_R.Name = "lb_Color_R";
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -219,5 +240,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tb_getCardTimeOut;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lb_Color_R;
+        private System.Windows.Forms.Label lb_Color_B;
+        private System.Windows.Forms.Label lb_Color_Y;
     }
 }

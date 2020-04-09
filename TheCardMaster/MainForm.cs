@@ -222,9 +222,9 @@ namespace TheCardMaster
                 tb_Yellow.Text = ((Keys) config.KeyYellow).ToString();
                 tb_Blue.Text = ((Keys) config.KeyBlue).ToString();
                 tb_Red.Text = ((Keys) config.KeyRed).ToString();
-                tb_Yellow.BackColor = Color.FromArgb(config.ArgbYellowCard);
-                tb_Blue.BackColor = Color.FromArgb(config.ArgbBlueCard);
-                tb_Red.BackColor = Color.FromArgb(config.ArgbRedCard);
+                lb_Color_Y.BackColor = Color.FromArgb(config.ArgbYellowCard);
+                lb_Color_B.BackColor = Color.FromArgb(config.ArgbBlueCard);
+                lb_Color_R.BackColor = Color.FromArgb(config.ArgbRedCard);
                 tb_CardPosX.Text = config.CardPositionX.ToString();
                 tb_CardPosY.Text = config.CardPositionY.ToString();
                 tb_KeyDownDelay.Text = config.KeyBlank.ToString();
@@ -321,6 +321,12 @@ namespace TheCardMaster
         {
             var box = sender as TextBox;
             if (box == null) return;
+            if (e.KeyData == Keys.Tab || e.KeyData == Keys.ShiftKey || e.KeyData == Keys.ControlKey ||
+                e.KeyData == Keys.Alt)
+            {
+                return;
+            }
+
             box.Text = e.KeyData.ToString();
             if (box.Name.Contains("Yellow"))
             {
