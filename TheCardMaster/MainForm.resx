@@ -334,7 +334,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="gb_Settings.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="gb_Settings.Text" xml:space="preserve">
     <value>按键设置</value>
@@ -796,7 +796,7 @@
     <value>96, 16</value>
   </data>
   <data name="cb_rAutoYellow.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>1</value>
   </data>
   <data name="cb_rAutoYellow.Text" xml:space="preserve">
     <value>大招自动黄牌</value>
@@ -855,7 +855,7 @@ ALT+3：设置红牌颜色；</value>
     <value>75, 23</value>
   </data>
   <data name="btn_Start.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>0</value>
   </data>
   <data name="btn_Start.Text" xml:space="preserve">
     <value>启动</value>
@@ -879,7 +879,7 @@ ALT+3：设置红牌颜色；</value>
     <value>75, 23</value>
   </data>
   <data name="btn_LoadConfig.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>2</value>
   </data>
   <data name="btn_LoadConfig.Text" xml:space="preserve">
     <value>加载配置</value>
@@ -906,7 +906,7 @@ ALT+3：设置红牌颜色；</value>
     <value>200, 274</value>
   </data>
   <data name="gb_Buttons.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="gb_Buttons.Text" xml:space="preserve">
     <value>操作按钮</value>

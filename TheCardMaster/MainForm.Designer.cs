@@ -48,10 +48,10 @@
             this.lb_Color_Y = new System.Windows.Forms.Label();
             this.lb_Yellow = new System.Windows.Forms.Label();
             this.gb_Buttons = new System.Windows.Forms.GroupBox();
+            this.cb_rAutoYellow = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Start = new System.Windows.Forms.Button();
             this.btn_LoadConfig = new System.Windows.Forms.Button();
-            this.cb_rAutoYellow = new System.Windows.Forms.CheckBox();
             this.gb_Settings.SuspendLayout();
             this.gb_Buttons.SuspendLayout();
             this.SuspendLayout();
@@ -184,6 +184,13 @@
             this.gb_Buttons.Name = "gb_Buttons";
             this.gb_Buttons.TabStop = false;
             // 
+            // cb_rAutoYellow
+            // 
+            resources.ApplyResources(this.cb_rAutoYellow, "cb_rAutoYellow");
+            this.cb_rAutoYellow.Name = "cb_rAutoYellow";
+            this.cb_rAutoYellow.UseVisualStyleBackColor = true;
+            this.cb_rAutoYellow.Click += new System.EventHandler(this.cb_rAutoYellow_Click);
+            // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
@@ -202,13 +209,6 @@
             this.btn_LoadConfig.Name = "btn_LoadConfig";
             this.btn_LoadConfig.UseVisualStyleBackColor = true;
             this.btn_LoadConfig.Click += new System.EventHandler(this.btn_LoadConfig_Click);
-            // 
-            // cb_rAutoYellow
-            // 
-            resources.ApplyResources(this.cb_rAutoYellow, "cb_rAutoYellow");
-            this.cb_rAutoYellow.Name = "cb_rAutoYellow";
-            this.cb_rAutoYellow.UseVisualStyleBackColor = true;
-            this.cb_rAutoYellow.Click += new System.EventHandler(this.cb_rAutoYellow_Click);
             // 
             // MainForm
             // 
